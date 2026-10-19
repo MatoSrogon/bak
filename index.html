@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oficiálna stránka Detského folklórneho súboru Lieska je stále vo výstavbe.">
+    <title>DFS Lieska | Stránka vo výstavbe</title>
+    <style>
+        :root {
+            --ink: #302a26;
+            --muted: #71665d;
+            --paper: #fffaf1;
+            --cream: #f3e7d1;
+            --red: #a83d3b;
+            --green: #315f4b;
+            --gold: #d29c3f;
+        }
+ 
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--ink);
+            background-color: var(--cream);
+            background-image:
+                radial-gradient(circle at 12% 18%, rgba(168, 61, 59, .12) 0 2px, transparent 3px),
+                radial-gradient(circle at 88% 72%, rgba(49, 95, 75, .12) 0 2px, transparent 3px),
+                linear-gradient(135deg, rgba(255,255,255,.22) 25%, transparent 25% 50%, rgba(255,255,255,.22) 50% 75%, transparent 75%);
+            background-size: 28px 28px, 34px 34px, 80px 80px;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .page {
+            width: min(100% - 32px, 1080px);
+            min-height: calc(100vh - 32px);
+            margin: 16px auto;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            background: var(--paper);
+            border: 1px solid rgba(48, 42, 38, .16);
+            box-shadow: 0 18px 55px rgba(70, 47, 28, .15);
+        }
+
+        header {
+            padding: 28px clamp(24px, 6vw, 72px) 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            border-bottom: 1px solid rgba(48, 42, 38, .15);
+        }
+
+        .brand { display: flex; align-items: center; gap: 14px; }
+
+        .brand-mark {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            color: var(--paper);
+            background: var(--red);
+            border-radius: 50% 50% 46% 46%;
+            font-size: 24px;
+            box-shadow: 6px 6px 0 var(--gold);
+        }
+
+        .brand-name {
+            margin: 0;
+            color: var(--green);
+            font-size: 1.25rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: var(--red);
+            font-family: Arial, sans-serif;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        main {
+            display: grid;
+            align-content: center;
+            justify-items: center;
+            padding: clamp(56px, 10vw, 120px) 24px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            margin: 0 0 20px;
+            color: var(--red);
+            font-family: Arial, sans-serif;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 720px;
+            margin: 0;
+            color: var(--green);
+            font-size: clamp(2.8rem, 7vw, 5.8rem);
+            font-weight: 400;
+            line-height: .98;
+        }
+
+        .intro {
+            max-width: 540px;
+            margin: 28px 0 34px;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            line-height: 1.65;
+        }
+
+        .notice {
+            max-width: 580px;
+            padding: 16px 22px;
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            color: var(--ink);
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        .notice strong { color: var(--red); }
+
+        .button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 14px 22px;
+            color: var(--paper);
+            background: var(--red);
+            font-family: Arial, sans-serif;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: transform .2s ease, background .2s ease;
+        }
+
+        .button:hover, .button:focus-visible {
+            background: var(--green);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            padding: 18px clamp(24px, 6vw, 72px);
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            color: var(--muted);
+            border-top: 1px solid rgba(48, 42, 38, .15);
+            font-family: Arial, sans-serif;
+            font-size: .72rem;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .page { width: min(100% - 20px, 1080px); min-height: calc(100vh - 20px); margin: 10px auto; }
+            header { align-items: flex-start; padding: 22px 20px 18px; }
+            nav { display: none; }
+            main { padding: 68px 20px 76px; }
+            footer { flex-direction: column; padding: 16px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="brand">
+                <p class="brand-name">DFS Lieska</p>
+            </div>
+            <nav aria-label="Hlavná navigácia">
+                <a href="https://lieska.webnode.sk/" target="_blank" rel="noreferrer">Pôvodná stránka</a>
+            </nav>
+        </header>
+
+        <main>
+            <p class="eyebrow">Detský folklórny súbor zo Žiliny</p>
+            <h1>Stránka je stále vo výstavbe</h1>
+            <p class="intro">Na novom domove pre hudbu, tanec a všetkých malých Lieskarov usilovne pracujeme.</p>
+            <p class="notice"><strong>Čoskoro tu nájdete</strong> naše vystúpenia, aktuality, fotogalériu aj informácie o súbore.</p>
+            <a class="button" href="https://lieska.webnode.sk/" target="_blank" rel="noreferrer">Navštíviť pôvodnú stránku</a>
+        </main>
+
+        <footer>
+            <span>Hudba · tanec · tradície</span>
+            <span>DFS Lieska</span>
+        </footer>
+    </div>
+</body>
+</html>
